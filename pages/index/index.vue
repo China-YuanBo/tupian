@@ -27,7 +27,15 @@
 		</view>
 		
 		<view class="select">
-			<commit-title></commit-title>
+			<commit-title>
+				<template #left>每日推荐</template>
+				<template #right>
+					<view class="date">
+						<uni-icons type="calendar" size="28"></uni-icons>
+						<uni-dateformat :date="Date.now()" format='dd日'></uni-dateformat>
+					</view>
+				</template>
+			</commit-title>
 			<view class="content">
 				<scroll-view scroll-x>
 					<view class="box" v-for="i in 8">
@@ -35,6 +43,18 @@
 					</view>
 				</scroll-view>
 			</view>
+		</view>
+		
+		
+		<view class="theme">
+			<commit-title>
+				<template #left>专题精选</template>
+				<template #right>
+					<view class="">
+						
+					</view>
+				</template>
+			</commit-title>
 		</view>
 	</view>
 </template>
@@ -108,11 +128,16 @@
 	
 	.select {
 		padding-top:50rpx;
+		.date{
+			display: flex;
+			align-items: center;
+		}
 		.content{
-			width: 690rpx;
-			margin: 30rpx 30rpx 0rpx 30rpx;
+			width: 720rpx;
+			margin: 30rpx 30rpx 0rpx 0rpx;
 			scroll-view{
 				white-space: nowrap;
+				margin-left: 30rpx;
 				.box{
 					width: 200rpx;
 					height: 430rpx;
@@ -129,6 +154,10 @@
 				}
 			}
 		}
+	}
+	
+	.theme{
+		padding-top: 50rpx;
 	}
 }
 </style>

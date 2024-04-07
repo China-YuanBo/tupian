@@ -1,13 +1,12 @@
 <template>
 	<view class="content">
 		<view class="left">
-			每日推荐
+			<slot name="left"></slot>
 		</view>
 		<view class="right">
-			<uni-icons type="calendar-filled" size="28"></uni-icons>
-			<uni-dateformat :date="Date.now()" format="dd号"></uni-dateformat>
-		</view>
-	</view>
+			<slot name="right"></slot>
+		</view>	
+	</view>	
 </template>
 
 <script setup>
@@ -16,18 +15,13 @@
 
 <style lang="scss" scoped> 
 .content{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	.left{
-		font-size: 38rpx;
-	}
-	.right
-	{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 28rpx;
-	}
-}
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding:0 30rpx 0 30rpx;
+			.left{
+				font-size: 38rpx;
+			}
+		
+		}
 </style>
